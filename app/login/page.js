@@ -29,7 +29,7 @@ export default function Page() {
         // บันทึก token และรายละเอียดผู้ใช้ใน localStorage
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify({ username })); // บันทึกรายละเอียดผู้ใช้
-        setMessage('Login successful!');
+        setMessage('เข้าสู่ระบบสำเร็จ!');
   
         // เปลี่ยนไปยังหน้า /login/user หลังจากล็อกอินสำเร็จ
         setTimeout(() => {
@@ -39,8 +39,8 @@ export default function Page() {
         setMessage(result.error);
       }
     } catch (error) {
-      console.error('An error occurred:', error);
-      setMessage('An error occurred during login.');
+      console.error('เกิดข้อผิดพลาด:', error);
+      setMessage('เกิดข้อผิดพลาดขณะเข้าสู่ระบบ.');
     }
   };
 
@@ -50,7 +50,7 @@ export default function Page() {
       <div className="d-flex align-items-center justify-content-center min-vh-100">
         <div className="card shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
           <div className="card-header bg-black text-white text-center">
-            <h4>Login</h4>
+            <h4>เข้าสู่ระบบ</h4>
           </div>
           <div className="card-body p-4">
             {message && (
@@ -60,7 +60,7 @@ export default function Page() {
             )}
             <form onSubmit={handleLogin}>
               <div className="mb-3">
-                <label htmlFor="username" className="form-label">Username</label>
+                <label htmlFor="username" className="form-label">ชื่อผู้ใช้</label>
                 <div className="input-group">
                   <span className="input-group-text" id="basic-addon1">
                     <i className="bi bi-person-circle"></i>
@@ -76,7 +76,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="mb-4">
-                <label htmlFor="password" className="form-label">Password</label>
+                <label htmlFor="password" className="form-label">รหัสผ่าน</label>
                 <div className="input-group">
                   <span className="input-group-text" id="basic-addon2">
                     <i className="bi bi-lock"></i>
@@ -93,7 +93,7 @@ export default function Page() {
               </div>
               <div className="d-grid">
                 <button type="submit" className="btn btn-outline-dark">
-                  <i className="bi bi-box-arrow-in-right"></i> Login
+                  <i className="bi bi-box-arrow-in-right"></i> เข้าสู่ระบบ
                 </button>
               </div>
             </form>
