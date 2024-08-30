@@ -1,0 +1,18 @@
+/* app/components/Nav.module.css */
+.logo {
+    max-width: 70px; /* ปรับขนาดโลโก้ตามที่ต้องการ */
+    height: auto; /* รักษาอัตราส่วนของโลโก้ */
+    margin-left: 30px;
+}   
+.navbar {
+    justify-content: center; /* จัดการเนื้อหาใน navbar ให้อยู่ตรงกลาง */  
+    border-bottom: 2px solid black; /* เพิ่มเส้นขอบด้านล่างของ Navbar ที่เป็นเส้นขอบสีดำ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่างของ Navbar จากส่วนที่อยู่ข้างล่าง */
+}
+
+.carousel-inner img,    
+.container .row img {
+    width: 100%; /* ทำให้รูปภาพเต็มความกว้างของพื้นที่ที่กำหนด */
+    height: auto; /* รักษาอัตราส่วนของภาพ */
+    display: block; /* ลบพื้นที่ว่างด้านล่างของภาพ */
+}
