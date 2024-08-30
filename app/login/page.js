@@ -15,7 +15,7 @@ export default function Page() {
     e.preventDefault();
   
     try {
-      const res = await fetch('https://localhost:3000/api/login', {
+      const res = await fetch('https://backend-beryl-six-95.vercel.app/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function Page() {
   
         // เปลี่ยนไปยังหน้า /login/user หลังจากล็อกอินสำเร็จ
         setTimeout(() => {
-          window.location.href = 'https://frontend-phi-three-58.vercel.app/';
+          window.location.href = 'https://frontend-phi-three-58.vercel.app/users';
         }, 1000); // รอ 1 วินาทีก่อนเปลี่ยนหน้า
       } else {
         setMessage(result.error);
