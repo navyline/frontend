@@ -77,7 +77,7 @@ export default function Home() {
                   <div className="card-body text-center">
                     <h5 className="card-title">Furina</h5>
                     <p className="card-text">ตัวละครระดับ 5 ดาว</p>
-                    <a href="#" className="btn btn-primary">Button</a>
+                    <a href="#" className="btn btn-primary">น้ำ?</a>
                   </div>
                 </div>
               </div>
