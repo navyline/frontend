@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '/app/component/nav';
 import Footer from '/app/Footter/footter';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,7 +10,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 export default function Page() {
   const [username, setUserName] = useState('');
   const [password, setPassWord] = useState('');
-  const [message, setMessage] = useState(''); // เก็บข้อความแจ้งเตือน
+  const [message, setMessage] = useState('');
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,21 +28,18 @@ export default function Page() {
       const result = await res.json();
   
       if (res.ok) {
-        // บันทึก token และรายละเอียดผู้ใช้ใน localStorage
         localStorage.setItem('token', result.token);
-        localStorage.setItem('user', JSON.stringify({ username })); // บันทึกรายละเอียดผู้ใช้
+        localStorage.setItem('user', JSON.stringify({ username }));
         setMessage('เข้าสู่ระบบสำเร็จ!');
-  
-        // เปลี่ยนไปยังหน้า /login/user หลังจากล็อกอินสำเร็จ
         setTimeout(() => {
-          window.location.href = 'https://frontend-phi-three-58.vercel.app/users';
-        }, 1000); // รอ 1 วินาทีก่อนเปลี่ยนหน้า
+          router.push('/users');
+        }, 1000);
       } else {
         setMessage(result.error);
       }
     } catch (error) {
-      console.error('เกิดข้อผิดพลาด:', error);
-      setMessage('เกิดข้อผิดพลาดขณะเข้าสู่ระบบ.');
+      console.error('An error occurred:', error);
+      setMessage('An error occurred during login.');
     }
   };
 
