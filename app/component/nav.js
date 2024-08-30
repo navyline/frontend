@@ -70,10 +70,10 @@ export default function Nav() {
                   <div className="d-flex ms-md-3">
                     {!isLoggedIn ? (
                       <>
-                        <Link href="/login" className="btn btn-outline-primary me-2">
+                        <Link href="/login" className="btn btn-outline-dark me-2">
                           Login
                         </Link>
-                        <Link href="/signup" className="btn btn-primary">
+                        <Link href="/signup" className="btn btn-dark">
                           Sign-up
                         </Link>
                       </>

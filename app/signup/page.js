@@ -38,8 +38,8 @@ export default function Page() {
       <br /><br /><br />
       <div className="container">
         <div className="card">
-          <div className="card-header bg-success text-white">
-            SignUp Form
+          <div className="card-header bg-dark text-white">
+            SignUp
           </div>
           <div className="card-body">
             {isSubmitted ? ( // Conditionally render the success message
@@ -77,7 +77,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="col-12">
-                  <button type="submit" className="btn btn-success">
+                  <button type="submit" className="btn btn-dark">
                     <i className="bi bi-box-arrow-right"></i> Sign Up
                   </button>
                 </div>

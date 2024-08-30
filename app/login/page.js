@@ -15,7 +15,7 @@ export default function Page() {
     e.preventDefault();
   
     try {
-      const res = await fetch('https://backend-beryl-six-95.vercel.app/api/login', {
+      const res = await fetch('https://localhost:3000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function Page() {
   
         // เปลี่ยนไปยังหน้า /login/user หลังจากล็อกอินสำเร็จ
         setTimeout(() => {
-          window.location.href = 'http://localhost:3001';
+          window.location.href = 'https://frontend-phi-three-58.vercel.app/';
         }, 1000); // รอ 1 วินาทีก่อนเปลี่ยนหน้า
       } else {
         setMessage(result.error);
@@ -49,8 +49,8 @@ export default function Page() {
       <Navbar />
       <div className="d-flex align-items-center justify-content-center min-vh-100">
         <div className="card shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
-          <div className="card-header bg-success text-white text-center">
-            <h4>Login Form</h4>
+          <div className="card-header bg-black text-white text-center">
+            <h4>Login</h4>
           </div>
           <div className="card-body p-4">
             {message && (
@@ -92,7 +92,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="d-grid">
-                <button type="submit" className="btn btn-success">
+                <button type="submit" className="btn btn-outline-dark">
                   <i className="bi bi-box-arrow-in-right"></i> Login
                 </button>
               </div>
